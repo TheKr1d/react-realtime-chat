@@ -1,30 +1,68 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/TheKr1d/frontend-project-12/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TheKr1d/frontend-project-12/actions)
+# Hexlet Chat
 
-## Website
-[Chat](https://frontend-project-12-backend.onrender.com)
+Realtime SPA-мессенджер на React.
 
-## Local Project Setup
+[Демо проекта](https://frontend-project-12-production-6c93.up.railway.app/)
 
-This guide will help you set up and run the project locally for development or testing purposes.
+## О проекте
 
-### 📋 Prerequisites
+Одностраничное приложение для обмена сообщениями в реальном времени.
 
-Before you begin, make sure you have the following installed:
+Пользователь может зарегистрироваться, авторизоваться, создавать и удалять каналы, переименовывать их и обмениваться сообщениями с другими пользователями.
 
-- **Node.js** (version 14.x or higher)
-- **npm** (version 7.x or higher)
-- **Make** (built-in on Linux/macOS; for Windows, use WSL or install via Chocolatey)
-- **Git** (for cloning the repository)
+## Возможности
 
----
+* регистрация и авторизация;
+* защищённые маршруты;
+* восстановление авторизации;
+* создание, переименование и удаление каналов;
+* отправка сообщений;
+* realtime-обновление сообщений и каналов через WebSocket;
+* валидация пользовательского ввода;
+* обработка ошибок API;
+* пользовательские уведомления;
+* интернационализация интерфейса;
+* Error Boundary и мониторинг ошибок через Sentry.
 
-### 🚀 Quick Start (4 steps)
+## Технологии
 
-#### 1. Clone the repository
+* JavaScript ES6+
+* React
+* Redux Toolkit
+* React Router
+* Axios
+* Socket.IO
+* Formik
+* Yup
+* Bootstrap
+* Mantine
+* i18next
+* Vite
+* GitHub Actions
+
+## Архитектура
+
+Состояние приложения разделено на несколько Redux slices:
+
+* `auth` — авторизация пользователя;
+* `channels` — каналы и активный канал;
+* `messages` — сообщения;
+* `socket` — состояние WebSocket-соединения;
+* `modal` — состояние модальных окон.
+
+Для коллекций каналов и сообщений используется Redux Toolkit `createEntityAdapter`.
+
+Работа с realtime-событиями вынесена в отдельный `useSocket` hook.
+
+## Запуск
+
 ```bash
 git clone https://github.com/TheKr1d/frontend-project-12.git
 cd frontend-project-12
 make install
 make develop
 ```
+
+## Демо
+
+[Открыть приложение](https://frontend-project-12-production-6c93.up.railway.app/)
