@@ -3,7 +3,7 @@
 Realtime SPA-мессенджер на React.
 
 [Демо проекта](https://frontend-project-12-backend.onrender.com)
-https://frontend-project-12-backend.onrender.com
+
 ## О проекте
 
 Одностраничное приложение для обмена сообщениями в реальном времени.
